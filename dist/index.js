@@ -10,7 +10,7 @@ deno run --allow-run --allow-read --allow-write https://deno.land/x/cn2tw@v0.0.1
  * ```
  import { convert } from 'https://deno.land/x/cn2tw@v0.0.1/index.ts';
  convert(~sourceFilename1~ ~goalFilename1~);
- (~sourceFilename2~ ~goalFilename2~);
+ convert(~sourceFilename2~ ~goalFilename2~);
  * ```
  *
  * <en_us>
