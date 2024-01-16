@@ -7,13 +7,13 @@ import { convert } from '../index.ts';
 import { assert } from 'https://deno.land/std@0.211.0/assert/mod.ts';
 
 (() => {
-	const FILE_WRITE_MODE = { mode: 0o777 };
+	const FILE_MODE_ALL = { mode: 0o777 };
 
 	const SOURCE_FILENAME = 'zh_cn.txt';
 	Deno.writeTextFileSync(
 		SOURCE_FILENAME,
 		'干，天干，今天干燥，如今天干燥热，假如今天干燥热晕了',
-		FILE_WRITE_MODE,
+		FILE_MODE_ALL,
 	);
 
 	const GOAL_FILENAME = 'zh_tw.txt';

@@ -88,13 +88,13 @@ import { assert } from 'https://deno.land/std@0.211.0/assert/mod.ts';
  * @returns boolean <en_us>Conversion is successful or not.</en_us><zh_cn>转换成功与否</zh_cn><zh_tw>轉換成功與否</zh_tw>
  */
 export function convert(sourceFilename: string, goalFilename: string): boolean {
-	const FILE_WRITE_MODE = { mode: 0o777 };
+	const FILE_MODE_ALL = { mode: 0o777 };
 	try {
 		const fileInfo = Deno.statSync(sourceFilename);
 		assert(fileInfo.isFile);
 
 		const SOURCE_CONTENT = Deno.readTextFileSync(sourceFilename);
-		Deno.writeTextFileSync(goalFilename, cn2tw(SOURCE_CONTENT), FILE_WRITE_MODE);
+		Deno.writeTextFileSync(goalFilename, cn2tw(SOURCE_CONTENT), FILE_MODE_ALL);
 
 		return true;
 	} catch (e) {
